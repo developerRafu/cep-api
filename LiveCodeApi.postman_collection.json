@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "5f6a139d-94da-4d31-93e9-1e557b502449",
+		"name": "LiveCodeApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13618889",
+		"_collection_link": "https://grey-star-433687.postman.co/workspace/live-code~9a955081-4446-4f56-a274-16bcfa21df36/collection/13618889-5f6a139d-94da-4d31-93e9-1e557b502449?action=share&source=collection_link&creator=13618889"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"number\": 22,\r\n    \"zipCode\": \"66077040\",\r\n    \"version\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/address",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crete batch",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"addresses\": [\r\n        {\r\n            \"number\": 22,\r\n            \"zipCode\": \"66077040\",\r\n            \"version\": 1\r\n        },\r\n        {\r\n            \"number\": 23,\r\n            \"zipCode\": \"47806421\",\r\n            \"version\": 1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/address/create_batch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"address",
+						"create_batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"addresses\": [\r\n        {\r\n            \"number\": 22,\r\n            \"zipCode\": \"66077040\",\r\n            \"version\": 1\r\n        },\r\n        {\r\n            \"number\": 23,\r\n            \"zipCode\": \"47806421\",\r\n            \"version\": 1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/address?zipCode=66077040",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"address"
+					],
+					"query": [
+						{
+							"key": "zipCode",
+							"value": "66077040"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
